@@ -1,0 +1,271 @@
+Simulator report for LAB7
+Mon May 23 11:09:13 2022
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 2.0 us       ;
+; Simulation Netlist Size     ; 66 nodes     ;
+; Simulation Coverage         ;      77.01 % ;
+; Total Number of Transitions ; 859          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone      ;
+; Device                      ; EP1C3T144C8  ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; VWF        ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On         ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      77.01 % ;
+; Total nodes checked                                 ; 66           ;
+; Total output ports checked                          ; 87           ;
+; Total output ports with complete 1/0-value coverage ; 67           ;
+; Total output ports with no 1/0-value coverage       ; 14           ;
+; Total output ports with no 1-value coverage         ; 16           ;
+; Total output ports with no 0-value coverage         ; 18           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                              ;
++-------------------------------+---------------------------------------+------------------+
+; Node Name                     ; Output Port Name                      ; Output Port Type ;
++-------------------------------+---------------------------------------+------------------+
+; |LAB7|Accumulator:Acc|Add0~21 ; |LAB7|Accumulator:Acc|Add0~21         ; combout          ;
+; |LAB7|Accumulator:Acc|Add0~23 ; |LAB7|Accumulator:Acc|Add0~23         ; combout          ;
+; |LAB7|Accumulator:Acc|Add0~23 ; |LAB7|Accumulator:Acc|Add0~24         ; cout0            ;
+; |LAB7|Accumulator:Acc|Add0~23 ; |LAB7|Accumulator:Acc|Add0~24COUT1_47 ; cout1            ;
+; |LAB7|Accumulator:Acc|Add0~25 ; |LAB7|Accumulator:Acc|Add0~25         ; combout          ;
+; |LAB7|Accumulator:Acc|Add0~25 ; |LAB7|Accumulator:Acc|Add0~26         ; cout0            ;
+; |LAB7|Accumulator:Acc|Add0~25 ; |LAB7|Accumulator:Acc|Add0~26COUT1_49 ; cout1            ;
+; |LAB7|Accumulator:Acc|Add0~27 ; |LAB7|Accumulator:Acc|Add0~27         ; combout          ;
+; |LAB7|Accumulator:Acc|Add0~27 ; |LAB7|Accumulator:Acc|Add0~28         ; cout0            ;
+; |LAB7|Accumulator:Acc|Add0~27 ; |LAB7|Accumulator:Acc|Add0~28COUT1_51 ; cout1            ;
+; |LAB7|Accumulator:Acc|Add0~29 ; |LAB7|Accumulator:Acc|Add0~29         ; combout          ;
+; |LAB7|Accumulator:Acc|Add0~29 ; |LAB7|Accumulator:Acc|Add0~30         ; cout             ;
+; |LAB7|Accumulator:Acc|Add0~31 ; |LAB7|Accumulator:Acc|Add0~31         ; combout          ;
+; |LAB7|Accumulator:Acc|Add0~31 ; |LAB7|Accumulator:Acc|Add0~32COUT1_53 ; cout1            ;
+; |LAB7|Accumulator:Acc|Add0~33 ; |LAB7|Accumulator:Acc|Add0~33         ; combout          ;
+; |LAB7|Accumulator:Acc|Add0~33 ; |LAB7|Accumulator:Acc|Add0~34         ; cout0            ;
+; |LAB7|Accumulator:Acc|Add0~33 ; |LAB7|Accumulator:Acc|Add0~34COUT1_55 ; cout1            ;
+; |LAB7|Accumulator:Acc|Add0~35 ; |LAB7|Accumulator:Acc|Add0~35         ; combout          ;
+; |LAB7|Reg8bit:R2|Reg[0]       ; |LAB7|Dbus[0]~11                      ; combout          ;
+; |LAB7|Reg8bit:R3|Reg[0]       ; |LAB7|Dbus[0]~12                      ; combout          ;
+; |LAB7|Dbus~13                 ; |LAB7|Dbus~13                         ; combout          ;
+; |LAB7|Reg8bit:R1|Reg[0]       ; |LAB7|Dbus[0]~14                      ; combout          ;
+; |LAB7|Accumulator:Acc|Reg[1]  ; |LAB7|Accumulator:Acc|Reg[1]          ; regout           ;
+; |LAB7|Reg8bit:R2|Reg[1]       ; |LAB7|Dbus[1]~15                      ; combout          ;
+; |LAB7|Reg8bit:R3|Reg[1]       ; |LAB7|Dbus[1]~16                      ; combout          ;
+; |LAB7|Reg8bit:R1|Reg[1]       ; |LAB7|Dbus[1]~17                      ; combout          ;
+; |LAB7|Reg8bit:R2|Reg[2]       ; |LAB7|Dbus[2]~18                      ; combout          ;
+; |LAB7|Reg8bit:R3|Reg[2]       ; |LAB7|Dbus[2]~19                      ; combout          ;
+; |LAB7|Reg8bit:R1|Reg[2]       ; |LAB7|Dbus[2]~20                      ; combout          ;
+; |LAB7|Reg8bit:R2|Reg[3]       ; |LAB7|Dbus[3]~21                      ; combout          ;
+; |LAB7|Reg8bit:R3|Reg[3]       ; |LAB7|Dbus[3]~22                      ; combout          ;
+; |LAB7|Reg8bit:R1|Reg[3]       ; |LAB7|Dbus[3]~23                      ; combout          ;
+; |LAB7|Accumulator:Acc|Reg[4]  ; |LAB7|Accumulator:Acc|Reg[4]          ; regout           ;
+; |LAB7|Reg8bit:R2|Reg[4]       ; |LAB7|Dbus[4]~24                      ; combout          ;
+; |LAB7|Reg8bit:R1|Reg[4]       ; |LAB7|Dbus[4]~26                      ; combout          ;
+; |LAB7|Reg8bit:R3|Reg[5]       ; |LAB7|Dbus[5]~28                      ; combout          ;
+; |LAB7|Reg8bit:R1|Reg[5]       ; |LAB7|Dbus[5]~29                      ; combout          ;
+; |LAB7|Reg8bit:R2|Reg[6]       ; |LAB7|Dbus[6]~30                      ; combout          ;
+; |LAB7|Reg8bit:R3|Reg[6]       ; |LAB7|Dbus[6]~31                      ; combout          ;
+; |LAB7|Reg8bit:R1|Reg[6]       ; |LAB7|Dbus[6]~32                      ; combout          ;
+; |LAB7|Reg8bit:R2|Reg[7]       ; |LAB7|Dbus[7]~33                      ; combout          ;
+; |LAB7|Reg8bit:R3|Reg[7]       ; |LAB7|Dbus[7]~34                      ; combout          ;
+; |LAB7|Reg8bit:R1|Reg[7]       ; |LAB7|Dbus[7]~35                      ; combout          ;
+; |LAB7|DioExt[0]               ; |LAB7|DioExt[0]~output                ; padio            ;
+; |LAB7|DioExt[1]               ; |LAB7|DioExt[1]~14                    ; combout          ;
+; |LAB7|DioExt[1]               ; |LAB7|DioExt[1]~output                ; padio            ;
+; |LAB7|DioExt[2]               ; |LAB7|DioExt[2]~13                    ; combout          ;
+; |LAB7|DioExt[2]               ; |LAB7|DioExt[2]~output                ; padio            ;
+; |LAB7|DioExt[3]               ; |LAB7|DioExt[3]~12                    ; combout          ;
+; |LAB7|DioExt[3]               ; |LAB7|DioExt[3]~output                ; padio            ;
+; |LAB7|DioExt[4]               ; |LAB7|DioExt[4]~11                    ; combout          ;
+; |LAB7|DioExt[4]               ; |LAB7|DioExt[4]~output                ; padio            ;
+; |LAB7|DioExt[5]               ; |LAB7|DioExt[5]~10                    ; combout          ;
+; |LAB7|DioExt[5]               ; |LAB7|DioExt[5]~output                ; padio            ;
+; |LAB7|DioExt[6]               ; |LAB7|DioExt[6]~9                     ; combout          ;
+; |LAB7|DioExt[6]               ; |LAB7|DioExt[6]~output                ; padio            ;
+; |LAB7|DioExt[7]               ; |LAB7|DioExt[7]~8                     ; combout          ;
+; |LAB7|DioExt[7]               ; |LAB7|DioExt[7]~output                ; padio            ;
+; |LAB7|RnW2                    ; |LAB7|RnW2~corein                     ; combout          ;
+; |LAB7|RnW4                    ; |LAB7|RnW4~corein                     ; combout          ;
+; |LAB7|RnW1                    ; |LAB7|RnW1~corein                     ; combout          ;
+; |LAB7|RnW3                    ; |LAB7|RnW3~corein                     ; combout          ;
+; |LAB7|Sel4                    ; |LAB7|Sel4~corein                     ; combout          ;
+; |LAB7|Clock                   ; |LAB7|Clock~corein                    ; combout          ;
+; |LAB7|Sel2                    ; |LAB7|Sel2~corein                     ; combout          ;
+; |LAB7|Sel3                    ; |LAB7|Sel3~corein                     ; combout          ;
+; |LAB7|Sel1                    ; |LAB7|Sel1~corein                     ; combout          ;
++-------------------------------+---------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                 ;
++-------------------------------+---------------------------------------+------------------+
+; Node Name                     ; Output Port Name                      ; Output Port Type ;
++-------------------------------+---------------------------------------+------------------+
+; |LAB7|Accumulator:Acc|Add0~21 ; |LAB7|Accumulator:Acc|Add0~22         ; cout0            ;
+; |LAB7|Accumulator:Acc|Add0~21 ; |LAB7|Accumulator:Acc|Add0~22COUT1_45 ; cout1            ;
+; |LAB7|Accumulator:Acc|Add0~31 ; |LAB7|Accumulator:Acc|Add0~32         ; cout0            ;
+; |LAB7|Accumulator:Acc|Reg[0]  ; |LAB7|Accumulator:Acc|Reg[0]          ; regout           ;
+; |LAB7|Reg8bit:R1|Reg[0]       ; |LAB7|Reg8bit:R1|Reg[0]               ; regout           ;
+; |LAB7|Reg8bit:R1|Reg[1]       ; |LAB7|Reg8bit:R1|Reg[1]               ; regout           ;
+; |LAB7|Reg8bit:R1|Reg[2]       ; |LAB7|Reg8bit:R1|Reg[2]               ; regout           ;
+; |LAB7|Accumulator:Acc|Reg[3]  ; |LAB7|Accumulator:Acc|Reg[3]          ; regout           ;
+; |LAB7|Reg8bit:R1|Reg[3]       ; |LAB7|Reg8bit:R1|Reg[3]               ; regout           ;
+; |LAB7|Reg8bit:R3|Reg[4]       ; |LAB7|Dbus[4]~25                      ; combout          ;
+; |LAB7|Reg8bit:R2|Reg[5]       ; |LAB7|Dbus[5]~27                      ; combout          ;
+; |LAB7|Reg8bit:R1|Reg[5]       ; |LAB7|Reg8bit:R1|Reg[5]               ; regout           ;
+; |LAB7|Reg8bit:R1|Reg[6]       ; |LAB7|Reg8bit:R1|Reg[6]               ; regout           ;
+; |LAB7|Accumulator:Acc|Reg[7]  ; |LAB7|Accumulator:Acc|Reg[7]          ; regout           ;
+; |LAB7|Reg8bit:R1|Reg[7]       ; |LAB7|Reg8bit:R1|Reg[7]               ; regout           ;
+; |LAB7|DioExt[0]               ; |LAB7|DioExt[0]~15                    ; combout          ;
++-------------------------------+---------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                 ;
++-------------------------------+---------------------------------------+------------------+
+; Node Name                     ; Output Port Name                      ; Output Port Type ;
++-------------------------------+---------------------------------------+------------------+
+; |LAB7|Accumulator:Acc|Add0~21 ; |LAB7|Accumulator:Acc|Add0~22         ; cout0            ;
+; |LAB7|Accumulator:Acc|Add0~21 ; |LAB7|Accumulator:Acc|Add0~22COUT1_45 ; cout1            ;
+; |LAB7|Accumulator:Acc|Reg[0]  ; |LAB7|Accumulator:Acc|Reg[0]          ; regout           ;
+; |LAB7|Reg8bit:R1|Reg[0]       ; |LAB7|Reg8bit:R1|Reg[0]               ; regout           ;
+; |LAB7|Reg8bit:R1|Reg[1]       ; |LAB7|Reg8bit:R1|Reg[1]               ; regout           ;
+; |LAB7|Accumulator:Acc|Reg[2]  ; |LAB7|Accumulator:Acc|Reg[2]          ; regout           ;
+; |LAB7|Reg8bit:R1|Reg[2]       ; |LAB7|Reg8bit:R1|Reg[2]               ; regout           ;
+; |LAB7|Accumulator:Acc|Reg[3]  ; |LAB7|Accumulator:Acc|Reg[3]          ; regout           ;
+; |LAB7|Reg8bit:R1|Reg[3]       ; |LAB7|Reg8bit:R1|Reg[3]               ; regout           ;
+; |LAB7|Reg8bit:R3|Reg[4]       ; |LAB7|Dbus[4]~25                      ; combout          ;
+; |LAB7|Reg8bit:R1|Reg[4]       ; |LAB7|Reg8bit:R1|Reg[4]               ; regout           ;
+; |LAB7|Accumulator:Acc|Reg[5]  ; |LAB7|Accumulator:Acc|Reg[5]          ; regout           ;
+; |LAB7|Reg8bit:R2|Reg[5]       ; |LAB7|Dbus[5]~27                      ; combout          ;
+; |LAB7|Reg8bit:R1|Reg[5]       ; |LAB7|Reg8bit:R1|Reg[5]               ; regout           ;
+; |LAB7|Accumulator:Acc|Reg[6]  ; |LAB7|Accumulator:Acc|Reg[6]          ; regout           ;
+; |LAB7|Reg8bit:R1|Reg[6]       ; |LAB7|Reg8bit:R1|Reg[6]               ; regout           ;
+; |LAB7|Accumulator:Acc|Reg[7]  ; |LAB7|Accumulator:Acc|Reg[7]          ; regout           ;
+; |LAB7|Reg8bit:R1|Reg[7]       ; |LAB7|Reg8bit:R1|Reg[7]               ; regout           ;
++-------------------------------+---------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 132 02/25/2009 SJ Web Edition
+    Info: Processing started: Mon May 23 11:09:12 2022
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off LAB7 -c LAB7
+Info: Using vector source file "C:/Users/ferhat/Desktop/lab 7/LAB 7 Bidirectional Data Transfer/LAB7.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of LAB7.vwf called LAB7.sim_ori.vwf has been created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning: Found logic contention at time 637.7 ns on bus node "|LAB7|DioExt[0]~result"
+    Info: Node "DioExt[0]~output" has logic level of 1
+    Info: Node "DioExt[0]" has logic level of 0
+Warning: Found logic contention at time 1.14 us on bus node "|LAB7|DioExt[0]~result"
+    Info: Node "DioExt[0]~output" has logic level of 1
+    Info: Node "DioExt[0]" has logic level of 0
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      77.01 %
+Info: Number of transitions in simulation is 859
+Info: Vector file LAB7.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 157 megabytes
+    Info: Processing ended: Mon May 23 11:09:13 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

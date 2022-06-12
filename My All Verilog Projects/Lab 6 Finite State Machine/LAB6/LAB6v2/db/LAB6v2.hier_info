@@ -1,0 +1,25 @@
+|LAB6v2
+Clk => Cntr[3].CLK
+Clk => Cntr[2].CLK
+Clk => Cntr[1].CLK
+Clk => Cntr[0].CLK
+Clk => SS[2].CLK
+Clk => SS[1].CLK
+Clk => SS[0].CLK
+Clk => SS2[2].CLK
+Clk => SS2[1].CLK
+Clk => SS2[0].CLK
+D1 => always2~3.IN0
+D1 => always2~1.IN0
+D1 => always2~0.IN0
+D1 => always2~2.IN0
+D2 => always2~2.IN1
+D2 => always2~1.IN1
+D2 => always2~0.IN1
+D2 => always2~3.IN1
+CarNum[0] <= Cntr[0].DB_MAX_OUTPUT_PORT_TYPE
+CarNum[1] <= Cntr[1].DB_MAX_OUTPUT_PORT_TYPE
+CarNum[2] <= Cntr[2].DB_MAX_OUTPUT_PORT_TYPE
+CarNum[3] <= Cntr[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

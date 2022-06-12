@@ -1,0 +1,81 @@
+|Lab2
+nReset => nReset~0.IN3
+Clock => Clock~0.IN3
+Enable => Enable~0.IN1
+Co1[0] <= BCD_Counter:Module1.Cout
+Co1[1] <= BCD_Counter:Module1.Cout
+Co1[2] <= BCD_Counter:Module1.Cout
+Co1[3] <= BCD_Counter:Module1.Cout
+Co10[0] <= BCD_Counter:Module2.Cout
+Co10[1] <= BCD_Counter:Module2.Cout
+Co10[2] <= BCD_Counter:Module2.Cout
+Co10[3] <= BCD_Counter:Module2.Cout
+Co100[0] <= BCD_Counter:Module3.Cout
+Co100[1] <= BCD_Counter:Module3.Cout
+Co100[2] <= BCD_Counter:Module3.Cout
+Co100[3] <= BCD_Counter:Module3.Cout
+
+
+|Lab2|BCD_Counter:Module1
+nRst => counter[3].ACLR
+nRst => counter[2].ACLR
+nRst => counter[1].ACLR
+nRst => counter[0].ACLR
+Clk => counter[3].CLK
+Clk => counter[2].CLK
+Clk => counter[1].CLK
+Clk => counter[0].CLK
+CntEn => NextEn~0.DATAB
+CntEn => counter[0].ENA
+CntEn => counter[3].ENA
+CntEn => counter[2].ENA
+CntEn => counter[1].ENA
+Cout[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+Cout[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+Cout[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+Cout[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+NextEn <= NextEn~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab2|BCD_Counter:Module2
+nRst => counter[3].ACLR
+nRst => counter[2].ACLR
+nRst => counter[1].ACLR
+nRst => counter[0].ACLR
+Clk => counter[3].CLK
+Clk => counter[2].CLK
+Clk => counter[1].CLK
+Clk => counter[0].CLK
+CntEn => NextEn~0.DATAB
+CntEn => counter[0].ENA
+CntEn => counter[3].ENA
+CntEn => counter[2].ENA
+CntEn => counter[1].ENA
+Cout[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+Cout[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+Cout[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+Cout[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+NextEn <= NextEn~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lab2|BCD_Counter:Module3
+nRst => counter[3].ACLR
+nRst => counter[2].ACLR
+nRst => counter[1].ACLR
+nRst => counter[0].ACLR
+Clk => counter[3].CLK
+Clk => counter[2].CLK
+Clk => counter[1].CLK
+Clk => counter[0].CLK
+CntEn => NextEn~0.DATAB
+CntEn => counter[0].ENA
+CntEn => counter[3].ENA
+CntEn => counter[2].ENA
+CntEn => counter[1].ENA
+Cout[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+Cout[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+Cout[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+Cout[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+NextEn <= NextEn~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

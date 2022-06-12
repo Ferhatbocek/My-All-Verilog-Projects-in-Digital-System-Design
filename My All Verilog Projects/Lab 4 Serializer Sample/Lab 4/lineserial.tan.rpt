@@ -1,0 +1,392 @@
+Classic Timing Analyzer report for lineserial
+Tue Apr 05 18:13:36 2022
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'Clk'
+  7. tsu
+  8. tco
+  9. tpd
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                        ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------+-------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                          ; To                            ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------+-------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 6.434 ns                         ; Send                          ; SerialTransmitter:ST|SRreg[1] ; --         ; Clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 8.993 ns                         ; SerialReceiver:SR|PDout[0]    ; PDout[0]                      ; Clk        ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 5.042 ns                         ; Clk                           ; SCout                         ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -3.976 ns                        ; PDin[0]                       ; SerialTransmitter:ST|SRreg[0] ; --         ; Clk      ; 0            ;
+; Clock Setup: 'Clk'           ; N/A   ; None          ; 255.75 MHz ( period = 3.910 ns ) ; SerialTransmitter:ST|SRreg[8] ; SerialReceiver:SR|PDout[0]    ; Clk        ; Clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                               ;                               ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------+-------------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP1C3T144C8        ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'Clk'                                                                                                                                                                                                                 ;
++-------+------------------------------------------------+-------------------------------+-------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                          ; To                            ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-------------------------------+-------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 255.75 MHz ( period = 3.910 ns )               ; SerialTransmitter:ST|SRreg[8] ; SerialReceiver:SR|PDout[0]    ; Clk        ; Clk      ; None                        ; None                      ; 3.636 ns                ;
+; N/A   ; 255.82 MHz ( period = 3.909 ns )               ; SerialTransmitter:ST|SRreg[8] ; SerialReceiver:SR|SRshift_R   ; Clk        ; Clk      ; None                        ; None                      ; 3.635 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|SRreg[6] ; Clk        ; Clk      ; None                        ; None                      ; 3.217 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|SRreg[5] ; Clk        ; Clk      ; None                        ; None                      ; 3.217 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|SRreg[4] ; Clk        ; Clk      ; None                        ; None                      ; 3.217 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|SRreg[3] ; Clk        ; Clk      ; None                        ; None                      ; 3.217 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|SRreg[2] ; Clk        ; Clk      ; None                        ; None                      ; 3.217 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|SRreg[1] ; Clk        ; Clk      ; None                        ; None                      ; 3.217 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|SRreg[7] ; Clk        ; Clk      ; None                        ; None                      ; 3.145 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|SRreg[6] ; Clk        ; Clk      ; None                        ; None                      ; 3.047 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|SRreg[5] ; Clk        ; Clk      ; None                        ; None                      ; 3.047 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|SRreg[4] ; Clk        ; Clk      ; None                        ; None                      ; 3.047 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|SRreg[3] ; Clk        ; Clk      ; None                        ; None                      ; 3.047 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|SRreg[2] ; Clk        ; Clk      ; None                        ; None                      ; 3.047 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|SRreg[1] ; Clk        ; Clk      ; None                        ; None                      ; 3.047 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[3]   ; SerialTransmitter:ST|SRreg[7] ; Clk        ; Clk      ; None                        ; None                      ; 2.972 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|SRreg[8] ; Clk        ; Clk      ; None                        ; None                      ; 2.936 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|SRreg[7] ; Clk        ; Clk      ; None                        ; None                      ; 2.936 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|SRreg[0] ; Clk        ; Clk      ; None                        ; None                      ; 2.936 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[2]   ; SerialTransmitter:ST|SRreg[7] ; Clk        ; Clk      ; None                        ; None                      ; 2.875 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[3]   ; SerialTransmitter:ST|SRreg[6] ; Clk        ; Clk      ; None                        ; None                      ; 2.874 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[3]   ; SerialTransmitter:ST|SRreg[5] ; Clk        ; Clk      ; None                        ; None                      ; 2.874 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[3]   ; SerialTransmitter:ST|SRreg[4] ; Clk        ; Clk      ; None                        ; None                      ; 2.874 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[3]   ; SerialTransmitter:ST|SRreg[3] ; Clk        ; Clk      ; None                        ; None                      ; 2.874 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[3]   ; SerialTransmitter:ST|SRreg[2] ; Clk        ; Clk      ; None                        ; None                      ; 2.874 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[3]   ; SerialTransmitter:ST|SRreg[1] ; Clk        ; Clk      ; None                        ; None                      ; 2.874 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[2]   ; SerialTransmitter:ST|SRreg[6] ; Clk        ; Clk      ; None                        ; None                      ; 2.777 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[2]   ; SerialTransmitter:ST|SRreg[5] ; Clk        ; Clk      ; None                        ; None                      ; 2.777 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[2]   ; SerialTransmitter:ST|SRreg[4] ; Clk        ; Clk      ; None                        ; None                      ; 2.777 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[2]   ; SerialTransmitter:ST|SRreg[3] ; Clk        ; Clk      ; None                        ; None                      ; 2.777 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[2]   ; SerialTransmitter:ST|SRreg[2] ; Clk        ; Clk      ; None                        ; None                      ; 2.777 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[2]   ; SerialTransmitter:ST|SRreg[1] ; Clk        ; Clk      ; None                        ; None                      ; 2.777 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|SRreg[8] ; Clk        ; Clk      ; None                        ; None                      ; 2.766 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|SRreg[0] ; Clk        ; Clk      ; None                        ; None                      ; 2.766 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[4]   ; SerialTransmitter:ST|SRreg[7] ; Clk        ; Clk      ; None                        ; None                      ; 2.728 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[4]   ; SerialTransmitter:ST|SRshift  ; Clk        ; Clk      ; None                        ; None                      ; 2.722 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|SRreg[7] ; Clk        ; Clk      ; None                        ; None                      ; 2.675 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[3]   ; SerialTransmitter:ST|SRreg[8] ; Clk        ; Clk      ; None                        ; None                      ; 2.593 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[3]   ; SerialTransmitter:ST|SRreg[0] ; Clk        ; Clk      ; None                        ; None                      ; 2.593 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|SRreg[6] ; Clk        ; Clk      ; None                        ; None                      ; 2.577 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|SRreg[5] ; Clk        ; Clk      ; None                        ; None                      ; 2.577 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|SRreg[4] ; Clk        ; Clk      ; None                        ; None                      ; 2.577 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|SRreg[3] ; Clk        ; Clk      ; None                        ; None                      ; 2.577 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|SRreg[2] ; Clk        ; Clk      ; None                        ; None                      ; 2.577 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|SRreg[1] ; Clk        ; Clk      ; None                        ; None                      ; 2.577 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|SRshift  ; Clk        ; Clk      ; None                        ; None                      ; 2.565 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[4]   ; SerialTransmitter:ST|SRreg[4] ; Clk        ; Clk      ; None                        ; None                      ; 2.541 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[4]   ; SerialTransmitter:ST|SRreg[3] ; Clk        ; Clk      ; None                        ; None                      ; 2.541 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[4]   ; SerialTransmitter:ST|SRreg[2] ; Clk        ; Clk      ; None                        ; None                      ; 2.539 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[4]   ; SerialTransmitter:ST|SRreg[1] ; Clk        ; Clk      ; None                        ; None                      ; 2.537 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[4]   ; SerialTransmitter:ST|SRreg[5] ; Clk        ; Clk      ; None                        ; None                      ; 2.535 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[4]   ; SerialTransmitter:ST|SRreg[6] ; Clk        ; Clk      ; None                        ; None                      ; 2.531 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[2]   ; SerialTransmitter:ST|SRreg[8] ; Clk        ; Clk      ; None                        ; None                      ; 2.496 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[2]   ; SerialTransmitter:ST|SRreg[0] ; Clk        ; Clk      ; None                        ; None                      ; 2.496 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|Cnt[0]   ; Clk        ; Clk      ; None                        ; None                      ; 2.341 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|Cnt[1]   ; Clk        ; Clk      ; None                        ; None                      ; 2.341 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|Cnt[2]   ; Clk        ; Clk      ; None                        ; None                      ; 2.341 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|Cnt[3]   ; Clk        ; Clk      ; None                        ; None                      ; 2.341 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|Cnt[4]   ; Clk        ; Clk      ; None                        ; None                      ; 2.341 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|SRreg[8] ; Clk        ; Clk      ; None                        ; None                      ; 2.296 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|SRreg[0] ; Clk        ; Clk      ; None                        ; None                      ; 2.296 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[4]   ; SerialTransmitter:ST|SRreg[8] ; Clk        ; Clk      ; None                        ; None                      ; 2.212 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[4]   ; SerialTransmitter:ST|SRreg[0] ; Clk        ; Clk      ; None                        ; None                      ; 2.212 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[3]   ; SerialTransmitter:ST|SRshift  ; Clk        ; Clk      ; None                        ; None                      ; 2.090 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|SRshift_R   ; SerialReceiver:SR|PDout[5]    ; Clk        ; Clk      ; None                        ; None                      ; 2.065 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|SRshift_R   ; SerialReceiver:SR|PDout[6]    ; Clk        ; Clk      ; None                        ; None                      ; 2.065 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|SRshift_R   ; SerialReceiver:SR|PDout[7]    ; Clk        ; Clk      ; None                        ; None                      ; 2.065 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|Cnt[4]   ; Clk        ; Clk      ; None                        ; None                      ; 2.060 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[2]   ; SerialTransmitter:ST|Cnt[4]   ; Clk        ; Clk      ; None                        ; None                      ; 1.995 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|Cnt[4]   ; Clk        ; Clk      ; None                        ; None                      ; 1.985 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|Cnt[3]   ; Clk        ; Clk      ; None                        ; None                      ; 1.980 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|Cntr[0]     ; SerialReceiver:SR|SRshift_R   ; Clk        ; Clk      ; None                        ; None                      ; 1.923 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[2]   ; SerialTransmitter:ST|Cnt[3]   ; Clk        ; Clk      ; None                        ; None                      ; 1.915 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|Cnt[3]   ; Clk        ; Clk      ; None                        ; None                      ; 1.905 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|Cnt[2]   ; Clk        ; Clk      ; None                        ; None                      ; 1.900 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|SRshift  ; Clk        ; Clk      ; None                        ; None                      ; 1.876 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|Cnt[2]   ; Clk        ; Clk      ; None                        ; None                      ; 1.825 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|Cnt[1]   ; Clk        ; Clk      ; None                        ; None                      ; 1.745 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[3]   ; SerialTransmitter:ST|Cnt[4]   ; Clk        ; Clk      ; None                        ; None                      ; 1.737 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|Cntr[1]     ; SerialReceiver:SR|SRshift_R   ; Clk        ; Clk      ; None                        ; None                      ; 1.687 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|SRshift_R   ; SerialReceiver:SR|PDout[0]    ; Clk        ; Clk      ; None                        ; None                      ; 1.497 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|SRshift_R   ; SerialReceiver:SR|PDout[1]    ; Clk        ; Clk      ; None                        ; None                      ; 1.497 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|SRshift_R   ; SerialReceiver:SR|PDout[2]    ; Clk        ; Clk      ; None                        ; None                      ; 1.497 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|SRshift_R   ; SerialReceiver:SR|PDout[3]    ; Clk        ; Clk      ; None                        ; None                      ; 1.497 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|SRshift_R   ; SerialReceiver:SR|PDout[4]    ; Clk        ; Clk      ; None                        ; None                      ; 1.497 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRreg[6] ; SerialTransmitter:ST|SRreg[7] ; Clk        ; Clk      ; None                        ; None                      ; 1.482 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRreg[0] ; SerialTransmitter:ST|SRreg[1] ; Clk        ; Clk      ; None                        ; None                      ; 1.352 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|SRshift_R   ; SerialReceiver:SR|Cntr[0]     ; Clk        ; Clk      ; None                        ; None                      ; 1.345 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|SRshift_R   ; SerialReceiver:SR|Cntr[2]     ; Clk        ; Clk      ; None                        ; None                      ; 1.344 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|SRshift_R   ; SerialReceiver:SR|SRshift_R   ; Clk        ; Clk      ; None                        ; None                      ; 1.338 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|SRshift_R   ; SerialReceiver:SR|Cntr[1]     ; Clk        ; Clk      ; None                        ; None                      ; 1.338 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[4]   ; SerialTransmitter:ST|Cnt[4]   ; Clk        ; Clk      ; None                        ; None                      ; 1.309 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[2]   ; SerialTransmitter:ST|Cnt[2]   ; Clk        ; Clk      ; None                        ; None                      ; 1.291 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRshift  ; SerialTransmitter:ST|SRshift  ; Clk        ; Clk      ; None                        ; None                      ; 1.287 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|SRshift_R   ; SerialReceiver:SR|SRshift_gg  ; Clk        ; Clk      ; None                        ; None                      ; 1.283 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[1]   ; SerialTransmitter:ST|Cnt[1]   ; Clk        ; Clk      ; None                        ; None                      ; 1.276 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|PDout[4]    ; SerialReceiver:SR|PDout[5]    ; Clk        ; Clk      ; None                        ; None                      ; 1.252 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[0]   ; SerialTransmitter:ST|Cnt[0]   ; Clk        ; Clk      ; None                        ; None                      ; 1.133 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRreg[7] ; SerialTransmitter:ST|SRreg[8] ; Clk        ; Clk      ; None                        ; None                      ; 1.127 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[3]   ; SerialTransmitter:ST|Cnt[3]   ; Clk        ; Clk      ; None                        ; None                      ; 1.125 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|Cntr[2]     ; SerialReceiver:SR|Cntr[2]     ; Clk        ; Clk      ; None                        ; None                      ; 1.125 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRreg[5] ; SerialTransmitter:ST|SRreg[6] ; Clk        ; Clk      ; None                        ; None                      ; 1.113 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|Cntr[0]     ; SerialReceiver:SR|Cntr[1]     ; Clk        ; Clk      ; None                        ; None                      ; 1.088 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|Cntr[0]     ; SerialReceiver:SR|Cntr[2]     ; Clk        ; Clk      ; None                        ; None                      ; 1.085 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|Cntr[0]     ; SerialReceiver:SR|Cntr[0]     ; Clk        ; Clk      ; None                        ; None                      ; 1.082 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|Cnt[2]   ; SerialTransmitter:ST|SRshift  ; Clk        ; Clk      ; None                        ; None                      ; 1.069 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|Cntr[2]     ; SerialReceiver:SR|SRshift_R   ; Clk        ; Clk      ; None                        ; None                      ; 1.035 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRreg[4] ; SerialTransmitter:ST|SRreg[5] ; Clk        ; Clk      ; None                        ; None                      ; 1.021 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRreg[3] ; SerialTransmitter:ST|SRreg[4] ; Clk        ; Clk      ; None                        ; None                      ; 1.020 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRreg[2] ; SerialTransmitter:ST|SRreg[3] ; Clk        ; Clk      ; None                        ; None                      ; 1.020 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialTransmitter:ST|SRreg[1] ; SerialTransmitter:ST|SRreg[2] ; Clk        ; Clk      ; None                        ; None                      ; 1.020 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|Cntr[1]     ; SerialReceiver:SR|Cntr[2]     ; Clk        ; Clk      ; None                        ; None                      ; 0.862 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|Cntr[1]     ; SerialReceiver:SR|Cntr[1]     ; Clk        ; Clk      ; None                        ; None                      ; 0.862 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|PDout[0]    ; SerialReceiver:SR|PDout[1]    ; Clk        ; Clk      ; None                        ; None                      ; 0.832 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|PDout[2]    ; SerialReceiver:SR|PDout[3]    ; Clk        ; Clk      ; None                        ; None                      ; 0.831 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|PDout[5]    ; SerialReceiver:SR|PDout[6]    ; Clk        ; Clk      ; None                        ; None                      ; 0.825 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|PDout[1]    ; SerialReceiver:SR|PDout[2]    ; Clk        ; Clk      ; None                        ; None                      ; 0.700 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|PDout[3]    ; SerialReceiver:SR|PDout[4]    ; Clk        ; Clk      ; None                        ; None                      ; 0.666 ns                ;
+; N/A   ; Restricted to 275.03 MHz ( period = 3.636 ns ) ; SerialReceiver:SR|PDout[6]    ; SerialReceiver:SR|PDout[7]    ; Clk        ; Clk      ; None                        ; None                      ; 0.653 ns                ;
++-------+------------------------------------------------+-------------------------------+-------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; tsu                                                                                    ;
++-------+--------------+------------+---------+-------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From    ; To                            ; To Clock ;
++-------+--------------+------------+---------+-------------------------------+----------+
+; N/A   ; None         ; 6.434 ns   ; Send    ; SerialTransmitter:ST|SRreg[6] ; Clk      ;
+; N/A   ; None         ; 6.434 ns   ; Send    ; SerialTransmitter:ST|SRreg[5] ; Clk      ;
+; N/A   ; None         ; 6.434 ns   ; Send    ; SerialTransmitter:ST|SRreg[4] ; Clk      ;
+; N/A   ; None         ; 6.434 ns   ; Send    ; SerialTransmitter:ST|SRreg[3] ; Clk      ;
+; N/A   ; None         ; 6.434 ns   ; Send    ; SerialTransmitter:ST|SRreg[2] ; Clk      ;
+; N/A   ; None         ; 6.434 ns   ; Send    ; SerialTransmitter:ST|SRreg[1] ; Clk      ;
+; N/A   ; None         ; 6.153 ns   ; Send    ; SerialTransmitter:ST|SRreg[8] ; Clk      ;
+; N/A   ; None         ; 6.153 ns   ; Send    ; SerialTransmitter:ST|SRreg[7] ; Clk      ;
+; N/A   ; None         ; 6.153 ns   ; Send    ; SerialTransmitter:ST|SRreg[0] ; Clk      ;
+; N/A   ; None         ; 4.987 ns   ; PDin[6] ; SerialTransmitter:ST|SRreg[6] ; Clk      ;
+; N/A   ; None         ; 4.774 ns   ; PDin[7] ; SerialTransmitter:ST|SRreg[7] ; Clk      ;
+; N/A   ; None         ; 4.693 ns   ; Send    ; SerialTransmitter:ST|SRshift  ; Clk      ;
+; N/A   ; None         ; 4.612 ns   ; PDin[1] ; SerialTransmitter:ST|SRreg[1] ; Clk      ;
+; N/A   ; None         ; 4.612 ns   ; PDin[3] ; SerialTransmitter:ST|SRreg[3] ; Clk      ;
+; N/A   ; None         ; 4.482 ns   ; PDin[4] ; SerialTransmitter:ST|SRreg[4] ; Clk      ;
+; N/A   ; None         ; 4.455 ns   ; PDin[2] ; SerialTransmitter:ST|SRreg[2] ; Clk      ;
+; N/A   ; None         ; 4.063 ns   ; PDin[5] ; SerialTransmitter:ST|SRreg[5] ; Clk      ;
+; N/A   ; None         ; 4.028 ns   ; PDin[0] ; SerialTransmitter:ST|SRreg[0] ; Clk      ;
++-------+--------------+------------+---------+-------------------------------+----------+
+
+
++-------------------------------------------------------------------------------------------+
+; tco                                                                                       ;
++-------+--------------+------------+-------------------------------+----------+------------+
+; Slack ; Required tco ; Actual tco ; From                          ; To       ; From Clock ;
++-------+--------------+------------+-------------------------------+----------+------------+
+; N/A   ; None         ; 8.993 ns   ; SerialReceiver:SR|PDout[0]    ; PDout[0] ; Clk        ;
+; N/A   ; None         ; 8.209 ns   ; SerialReceiver:SR|SRshift_R   ; PDready  ; Clk        ;
+; N/A   ; None         ; 7.929 ns   ; SerialTransmitter:ST|SRreg[8] ; SDout    ; Clk        ;
+; N/A   ; None         ; 6.998 ns   ; SerialReceiver:SR|PDout[1]    ; PDout[1] ; Clk        ;
+; N/A   ; None         ; 6.997 ns   ; SerialReceiver:SR|PDout[3]    ; PDout[3] ; Clk        ;
+; N/A   ; None         ; 6.973 ns   ; SerialReceiver:SR|PDout[4]    ; PDout[4] ; Clk        ;
+; N/A   ; None         ; 6.835 ns   ; SerialReceiver:SR|PDout[2]    ; PDout[2] ; Clk        ;
+; N/A   ; None         ; 6.829 ns   ; SerialReceiver:SR|SRshift_gg  ; PDready  ; Clk        ;
+; N/A   ; None         ; 6.674 ns   ; SerialReceiver:SR|PDout[5]    ; PDout[5] ; Clk        ;
+; N/A   ; None         ; 6.222 ns   ; SerialReceiver:SR|PDout[7]    ; PDout[7] ; Clk        ;
+; N/A   ; None         ; 6.222 ns   ; SerialReceiver:SR|PDout[6]    ; PDout[6] ; Clk        ;
++-------+--------------+------------+-------------------------------+----------+------------+
+
+
++------------------------------------------------------------+
+; tpd                                                        ;
++-------+-------------------+-----------------+------+-------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From ; To    ;
++-------+-------------------+-----------------+------+-------+
+; N/A   ; None              ; 5.042 ns        ; Clk  ; SCout ;
++-------+-------------------+-----------------+------+-------+
+
+
++----------------------------------------------------------------------------------------------+
+; th                                                                                           ;
++---------------+-------------+-----------+---------+-------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From    ; To                            ; To Clock ;
++---------------+-------------+-----------+---------+-------------------------------+----------+
+; N/A           ; None        ; -3.976 ns ; PDin[0] ; SerialTransmitter:ST|SRreg[0] ; Clk      ;
+; N/A           ; None        ; -4.011 ns ; PDin[5] ; SerialTransmitter:ST|SRreg[5] ; Clk      ;
+; N/A           ; None        ; -4.403 ns ; PDin[2] ; SerialTransmitter:ST|SRreg[2] ; Clk      ;
+; N/A           ; None        ; -4.430 ns ; PDin[4] ; SerialTransmitter:ST|SRreg[4] ; Clk      ;
+; N/A           ; None        ; -4.560 ns ; PDin[1] ; SerialTransmitter:ST|SRreg[1] ; Clk      ;
+; N/A           ; None        ; -4.560 ns ; PDin[3] ; SerialTransmitter:ST|SRreg[3] ; Clk      ;
+; N/A           ; None        ; -4.641 ns ; Send    ; SerialTransmitter:ST|SRshift  ; Clk      ;
+; N/A           ; None        ; -4.722 ns ; PDin[7] ; SerialTransmitter:ST|SRreg[7] ; Clk      ;
+; N/A           ; None        ; -4.914 ns ; Send    ; SerialTransmitter:ST|SRreg[0] ; Clk      ;
+; N/A           ; None        ; -4.915 ns ; Send    ; SerialTransmitter:ST|SRreg[8] ; Clk      ;
+; N/A           ; None        ; -4.935 ns ; PDin[6] ; SerialTransmitter:ST|SRreg[6] ; Clk      ;
+; N/A           ; None        ; -5.388 ns ; Send    ; SerialTransmitter:ST|SRreg[6] ; Clk      ;
+; N/A           ; None        ; -5.392 ns ; Send    ; SerialTransmitter:ST|SRreg[5] ; Clk      ;
+; N/A           ; None        ; -5.394 ns ; Send    ; SerialTransmitter:ST|SRreg[1] ; Clk      ;
+; N/A           ; None        ; -5.396 ns ; Send    ; SerialTransmitter:ST|SRreg[2] ; Clk      ;
+; N/A           ; None        ; -5.398 ns ; Send    ; SerialTransmitter:ST|SRreg[4] ; Clk      ;
+; N/A           ; None        ; -5.398 ns ; Send    ; SerialTransmitter:ST|SRreg[3] ; Clk      ;
+; N/A           ; None        ; -5.585 ns ; Send    ; SerialTransmitter:ST|SRreg[7] ; Clk      ;
++---------------+-------------+-----------+---------+-------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Web Edition
+    Info: Processing started: Tue Apr 05 18:13:34 2022
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off lineserial -c lineserial --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "Clk" is an undefined clock
+Info: Clock "Clk" has Internal fmax of 255.75 MHz between source register "SerialTransmitter:ST|SRreg[8]" and destination register "SerialReceiver:SR|PDout[0]" (period= 3.91 ns)
+    Info: + Longest register to register delay is 3.636 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X25_Y5_N1; Fanout = 3; REG Node = 'SerialTransmitter:ST|SRreg[8]'
+        Info: 2: + IC(3.327 ns) + CELL(0.309 ns) = 3.636 ns; Loc. = LC_X3_Y4_N1; Fanout = 2; REG Node = 'SerialReceiver:SR|PDout[0]'
+        Info: Total cell delay = 0.309 ns ( 8.50 % )
+        Info: Total interconnect delay = 3.327 ns ( 91.50 % )
+    Info: - Smallest clock skew is -0.013 ns
+        Info: + Shortest clock path from clock "Clk" to destination register is 2.730 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 29; CLK Node = 'Clk'
+            Info: 2: + IC(0.550 ns) + CELL(0.711 ns) = 2.730 ns; Loc. = LC_X3_Y4_N1; Fanout = 2; REG Node = 'SerialReceiver:SR|PDout[0]'
+            Info: Total cell delay = 2.180 ns ( 79.85 % )
+            Info: Total interconnect delay = 0.550 ns ( 20.15 % )
+        Info: - Longest clock path from clock "Clk" to source register is 2.743 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 29; CLK Node = 'Clk'
+            Info: 2: + IC(0.563 ns) + CELL(0.711 ns) = 2.743 ns; Loc. = LC_X25_Y5_N1; Fanout = 3; REG Node = 'SerialTransmitter:ST|SRreg[8]'
+            Info: Total cell delay = 2.180 ns ( 79.48 % )
+            Info: Total interconnect delay = 0.563 ns ( 20.52 % )
+    Info: + Micro clock to output delay of source is 0.224 ns
+    Info: + Micro setup delay of destination is 0.037 ns
+Info: tsu for register "SerialTransmitter:ST|SRreg[6]" (data pin = "Send", clock pin = "Clk") is 6.434 ns
+    Info: + Longest pin to register delay is 9.140 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_78; Fanout = 5; PIN Node = 'Send'
+        Info: 2: + IC(5.464 ns) + CELL(0.590 ns) = 7.523 ns; Loc. = LC_X25_Y5_N4; Fanout = 9; COMB Node = 'SerialTransmitter:ST|SRreg~19'
+        Info: 3: + IC(0.750 ns) + CELL(0.867 ns) = 9.140 ns; Loc. = LC_X26_Y5_N2; Fanout = 1; REG Node = 'SerialTransmitter:ST|SRreg[6]'
+        Info: Total cell delay = 2.926 ns ( 32.01 % )
+        Info: Total interconnect delay = 6.214 ns ( 67.99 % )
+    Info: + Micro setup delay of destination is 0.037 ns
+    Info: - Shortest clock path from clock "Clk" to destination register is 2.743 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 29; CLK Node = 'Clk'
+        Info: 2: + IC(0.563 ns) + CELL(0.711 ns) = 2.743 ns; Loc. = LC_X26_Y5_N2; Fanout = 1; REG Node = 'SerialTransmitter:ST|SRreg[6]'
+        Info: Total cell delay = 2.180 ns ( 79.48 % )
+        Info: Total interconnect delay = 0.563 ns ( 20.52 % )
+Info: tco from clock "Clk" to destination pin "PDout[0]" through register "SerialReceiver:SR|PDout[0]" is 8.993 ns
+    Info: + Longest clock path from clock "Clk" to source register is 2.730 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 29; CLK Node = 'Clk'
+        Info: 2: + IC(0.550 ns) + CELL(0.711 ns) = 2.730 ns; Loc. = LC_X3_Y4_N1; Fanout = 2; REG Node = 'SerialReceiver:SR|PDout[0]'
+        Info: Total cell delay = 2.180 ns ( 79.85 % )
+        Info: Total interconnect delay = 0.550 ns ( 20.15 % )
+    Info: + Micro clock to output delay of source is 0.224 ns
+    Info: + Longest register to pin delay is 6.039 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X3_Y4_N1; Fanout = 2; REG Node = 'SerialReceiver:SR|PDout[0]'
+        Info: 2: + IC(3.915 ns) + CELL(2.124 ns) = 6.039 ns; Loc. = PIN_77; Fanout = 0; PIN Node = 'PDout[0]'
+        Info: Total cell delay = 2.124 ns ( 35.17 % )
+        Info: Total interconnect delay = 3.915 ns ( 64.83 % )
+Info: Longest tpd from source pin "Clk" to destination pin "SCout" is 5.042 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 29; CLK Node = 'Clk'
+    Info: 2: + IC(1.465 ns) + CELL(2.108 ns) = 5.042 ns; Loc. = PIN_110; Fanout = 0; PIN Node = 'SCout'
+    Info: Total cell delay = 3.577 ns ( 70.94 % )
+    Info: Total interconnect delay = 1.465 ns ( 29.06 % )
+Info: th for register "SerialTransmitter:ST|SRreg[0]" (data pin = "PDin[0]", clock pin = "Clk") is -3.976 ns
+    Info: + Longest clock path from clock "Clk" to destination register is 2.743 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_17; Fanout = 29; CLK Node = 'Clk'
+        Info: 2: + IC(0.563 ns) + CELL(0.711 ns) = 2.743 ns; Loc. = LC_X25_Y5_N2; Fanout = 1; REG Node = 'SerialTransmitter:ST|SRreg[0]'
+        Info: Total cell delay = 2.180 ns ( 79.48 % )
+        Info: Total interconnect delay = 0.563 ns ( 20.52 % )
+    Info: + Micro hold delay of destination is 0.015 ns
+    Info: - Shortest pin to register delay is 6.734 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.469 ns) = 1.469 ns; Loc. = PIN_84; Fanout = 1; PIN Node = 'PDin[0]'
+        Info: 2: + IC(4.956 ns) + CELL(0.309 ns) = 6.734 ns; Loc. = LC_X25_Y5_N2; Fanout = 1; REG Node = 'SerialTransmitter:ST|SRreg[0]'
+        Info: Total cell delay = 1.778 ns ( 26.40 % )
+        Info: Total interconnect delay = 4.956 ns ( 73.60 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 183 megabytes
+    Info: Processing ended: Tue Apr 05 18:13:37 2022
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:00
+
+

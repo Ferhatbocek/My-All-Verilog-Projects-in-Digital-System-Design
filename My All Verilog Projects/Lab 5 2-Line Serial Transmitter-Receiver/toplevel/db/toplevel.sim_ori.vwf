@@ -1,0 +1,1609 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+
+/*
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+
+HEADER
+{
+	VERSION = 1;
+	TIME_UNIT = ns;
+	PRINT_OPTIONS = "Print_options_version 6\
+range_start 0ps\
+range_end 1.0us\
+width 1\
+names_percentage 25\
+comments 1\
+grid_lines 1\
+time_bars 1\
+name_every_page 0\
+expand_groups 0\
+print_all 1\
+print_row_height 100";
+	DATA_OFFSET = 0.0;
+	DATA_DURATION = 5000.0;
+	SIMULATION_TIME = 5000.0;
+	GRID_PHASE = 0.0;
+	GRID_PERIOD = 10.0;
+	GRID_DUTY_CYCLE = 50;
+}
+
+SIGNAL("Clk")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("PDin")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 8;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("PDin[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "PDin";
+}
+
+SIGNAL("PDin[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "PDin";
+}
+
+SIGNAL("PDin[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "PDin";
+}
+
+SIGNAL("PDin[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "PDin";
+}
+
+SIGNAL("PDin[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "PDin";
+}
+
+SIGNAL("PDin[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "PDin";
+}
+
+SIGNAL("PDin[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "PDin";
+}
+
+SIGNAL("PDin[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "PDin";
+}
+
+SIGNAL("PDout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 8;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("PDout[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PDout";
+}
+
+SIGNAL("PDout[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PDout";
+}
+
+SIGNAL("PDout[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PDout";
+}
+
+SIGNAL("PDout[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PDout";
+}
+
+SIGNAL("PDout[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PDout";
+}
+
+SIGNAL("PDout[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PDout";
+}
+
+SIGNAL("PDout[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PDout";
+}
+
+SIGNAL("PDout[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "PDout";
+}
+
+SIGNAL("PDready")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("ParErr")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("Send")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("serialtransmitter:X|SDout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
+SIGNAL("serialtransmitter:X|SR")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 10;
+	LSB_INDEX = 0;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
+SIGNAL("serialtransmitter:X|SR[9]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialtransmitter:X|SR";
+}
+
+SIGNAL("serialtransmitter:X|SR[8]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialtransmitter:X|SR";
+}
+
+SIGNAL("serialtransmitter:X|SR[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialtransmitter:X|SR";
+}
+
+SIGNAL("serialtransmitter:X|SR[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialtransmitter:X|SR";
+}
+
+SIGNAL("serialtransmitter:X|SR[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialtransmitter:X|SR";
+}
+
+SIGNAL("serialtransmitter:X|SR[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialtransmitter:X|SR";
+}
+
+SIGNAL("serialtransmitter:X|SR[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialtransmitter:X|SR";
+}
+
+SIGNAL("serialtransmitter:X|SR[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialtransmitter:X|SR";
+}
+
+SIGNAL("serialtransmitter:X|SR[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialtransmitter:X|SR";
+}
+
+SIGNAL("serialtransmitter:X|SR[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialtransmitter:X|SR";
+}
+
+SIGNAL("serialtransmitter:X|Send1")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
+SIGNAL("serialreceiver:Y|PDout")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 8;
+	LSB_INDEX = 0;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
+SIGNAL("serialreceiver:Y|PDout[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialreceiver:Y|PDout";
+}
+
+SIGNAL("serialreceiver:Y|PDout[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialreceiver:Y|PDout";
+}
+
+SIGNAL("serialreceiver:Y|PDout[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialreceiver:Y|PDout";
+}
+
+SIGNAL("serialreceiver:Y|PDout[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialreceiver:Y|PDout";
+}
+
+SIGNAL("serialreceiver:Y|PDout[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialreceiver:Y|PDout";
+}
+
+SIGNAL("serialreceiver:Y|PDout[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialreceiver:Y|PDout";
+}
+
+SIGNAL("serialreceiver:Y|PDout[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialreceiver:Y|PDout";
+}
+
+SIGNAL("serialreceiver:Y|PDout[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialreceiver:Y|PDout";
+}
+
+SIGNAL("serialreceiver:Y|PDready")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
+SIGNAL("serialreceiver:Y|ParErr")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
+SIGNAL("serialreceiver:Y|counter")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 4;
+	LSB_INDEX = 0;
+	DIRECTION = REGISTERED;
+	PARENT = "";
+}
+
+SIGNAL("serialreceiver:Y|counter[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialreceiver:Y|counter";
+}
+
+SIGNAL("serialreceiver:Y|counter[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialreceiver:Y|counter";
+}
+
+SIGNAL("serialreceiver:Y|counter[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialreceiver:Y|counter";
+}
+
+SIGNAL("serialreceiver:Y|counter[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = REGISTERED;
+	PARENT = "serialreceiver:Y|counter";
+}
+
+TRANSITION_LIST("Clk")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 100;
+			LEVEL 0 FOR 25.0;
+			LEVEL 1 FOR 25.0;
+		}
+	}
+}
+
+TRANSITION_LIST("PDin[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 5000.0;
+	}
+}
+
+TRANSITION_LIST("PDin[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 5000.0;
+	}
+}
+
+TRANSITION_LIST("PDin[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 5000.0;
+	}
+}
+
+TRANSITION_LIST("PDin[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 5000.0;
+	}
+}
+
+TRANSITION_LIST("PDin[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 5000.0;
+	}
+}
+
+TRANSITION_LIST("PDin[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 5000.0;
+	}
+}
+
+TRANSITION_LIST("PDin[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 5000.0;
+	}
+}
+
+TRANSITION_LIST("PDin[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 5000.0;
+	}
+}
+
+TRANSITION_LIST("PDout[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 733.012;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 4166.988;
+	}
+}
+
+TRANSITION_LIST("PDout[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 683.417;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 4166.583;
+	}
+}
+
+TRANSITION_LIST("PDout[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 631.471;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 4268.529;
+	}
+}
+
+TRANSITION_LIST("PDout[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 582.43;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 4167.57;
+	}
+}
+
+TRANSITION_LIST("PDout[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 533.883;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4266.117;
+	}
+}
+
+TRANSITION_LIST("PDout[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 482.354;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4317.646;
+	}
+}
+
+TRANSITION_LIST("PDout[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 432.433;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4367.567;
+	}
+}
+
+TRANSITION_LIST("PDout[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 383.413;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 4166.587;
+	}
+}
+
+TRANSITION_LIST("PDready")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 782.324;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4167.676;
+	}
+}
+
+TRANSITION_LIST("ParErr")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 5000.0;
+	}
+}
+
+TRANSITION_LIST("Send")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 180.0;
+		LEVEL 1 FOR 220.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 140.0;
+		LEVEL 0 FOR 4360.0;
+	}
+}
+
+TRANSITION_LIST("serialtransmitter:X|SDout")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 278.006;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4271.994;
+	}
+}
+
+TRANSITION_LIST("serialtransmitter:X|SR[9]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 227.967;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4322.033;
+	}
+}
+
+TRANSITION_LIST("serialtransmitter:X|SR[8]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 227.967;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4372.033;
+	}
+}
+
+TRANSITION_LIST("serialtransmitter:X|SR[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 227.967;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4422.033;
+	}
+}
+
+TRANSITION_LIST("serialtransmitter:X|SR[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 277.967;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4472.033;
+	}
+}
+
+TRANSITION_LIST("serialtransmitter:X|SR[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 227.967;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4522.033;
+	}
+}
+
+TRANSITION_LIST("serialtransmitter:X|SR[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 377.967;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4572.033;
+	}
+}
+
+TRANSITION_LIST("serialtransmitter:X|SR[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 327.967;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4622.033;
+	}
+}
+
+TRANSITION_LIST("serialtransmitter:X|SR[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 277.967;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4672.033;
+	}
+}
+
+TRANSITION_LIST("serialtransmitter:X|SR[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 227.967;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4722.033;
+	}
+}
+
+TRANSITION_LIST("serialtransmitter:X|SR[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 5000.0;
+	}
+}
+
+TRANSITION_LIST("serialtransmitter:X|Send1")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 227.967;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 4622.033;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|PDout[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 728.006;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 4171.994;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|PDout[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 678.006;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 4171.994;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|PDout[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 628.006;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 4271.994;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|PDout[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 578.006;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 4171.994;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|PDout[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 528.006;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4271.994;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|PDout[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 478.006;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4321.994;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|PDout[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 428.006;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4371.994;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|PDout[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 378.006;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 50.0;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 100.0;
+		LEVEL 0 FOR 4171.994;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|PDready")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 778.006;
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4171.994;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|ParErr")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 5000.0;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|counter[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 678.006;
+		LEVEL 1 FOR 150.0;
+		LEVEL 0 FOR 4171.994;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|counter[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 478.006;
+		LEVEL 1 FOR 200.0;
+		LEVEL 0 FOR 4321.994;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|counter[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 378.006;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 1 FOR 100.0;
+			LEVEL 0 FOR 100.0;
+		}
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4171.994;
+	}
+}
+
+TRANSITION_LIST("serialreceiver:Y|counter[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 328.006;
+		NODE
+		{
+			REPEAT = 4;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 50.0;
+		}
+		LEVEL 1 FOR 50.0;
+		LEVEL 0 FOR 4221.994;
+	}
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Clk";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 0;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDin";
+	EXPAND_STATUS = EXPANDED;
+	RADIX = Unsigned;
+	TREE_INDEX = 1;
+	TREE_LEVEL = 0;
+	CHILDREN = 2, 3, 4, 5, 6, 7, 8, 9;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDin[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 2;
+	TREE_LEVEL = 1;
+	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDin[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 3;
+	TREE_LEVEL = 1;
+	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDin[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 4;
+	TREE_LEVEL = 1;
+	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDin[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 5;
+	TREE_LEVEL = 1;
+	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDin[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 6;
+	TREE_LEVEL = 1;
+	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDin[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 7;
+	TREE_LEVEL = 1;
+	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDin[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 8;
+	TREE_LEVEL = 1;
+	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDin[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 9;
+	TREE_LEVEL = 1;
+	PARENT = 1;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "Send";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 11;
+	TREE_LEVEL = 0;
+	CHILDREN = 12, 13, 14, 15, 16, 17, 18, 19;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDout[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 12;
+	TREE_LEVEL = 1;
+	PARENT = 11;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDout[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 13;
+	TREE_LEVEL = 1;
+	PARENT = 11;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDout[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 14;
+	TREE_LEVEL = 1;
+	PARENT = 11;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDout[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 15;
+	TREE_LEVEL = 1;
+	PARENT = 11;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDout[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 16;
+	TREE_LEVEL = 1;
+	PARENT = 11;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDout[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 17;
+	TREE_LEVEL = 1;
+	PARENT = 11;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDout[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 18;
+	TREE_LEVEL = 1;
+	PARENT = 11;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDout[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 19;
+	TREE_LEVEL = 1;
+	PARENT = 11;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "PDready";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 20;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ParErr";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 21;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialtransmitter:X|SDout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 22;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialtransmitter:X|SR";
+	EXPAND_STATUS = EXPANDED;
+	RADIX = ASCII;
+	TREE_INDEX = 23;
+	TREE_LEVEL = 0;
+	CHILDREN = 24, 25, 26, 27, 28, 29, 30, 31, 32, 33;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialtransmitter:X|SR[9]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 24;
+	TREE_LEVEL = 1;
+	PARENT = 23;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialtransmitter:X|SR[8]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 25;
+	TREE_LEVEL = 1;
+	PARENT = 23;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialtransmitter:X|SR[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 26;
+	TREE_LEVEL = 1;
+	PARENT = 23;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialtransmitter:X|SR[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 27;
+	TREE_LEVEL = 1;
+	PARENT = 23;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialtransmitter:X|SR[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 28;
+	TREE_LEVEL = 1;
+	PARENT = 23;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialtransmitter:X|SR[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 29;
+	TREE_LEVEL = 1;
+	PARENT = 23;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialtransmitter:X|SR[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 30;
+	TREE_LEVEL = 1;
+	PARENT = 23;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialtransmitter:X|SR[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 31;
+	TREE_LEVEL = 1;
+	PARENT = 23;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialtransmitter:X|SR[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 32;
+	TREE_LEVEL = 1;
+	PARENT = 23;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialtransmitter:X|SR[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 33;
+	TREE_LEVEL = 1;
+	PARENT = 23;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialtransmitter:X|Send1";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 34;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|PDout";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 35;
+	TREE_LEVEL = 0;
+	CHILDREN = 36, 37, 38, 39, 40, 41, 42, 43;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|PDout[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 36;
+	TREE_LEVEL = 1;
+	PARENT = 35;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|PDout[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 37;
+	TREE_LEVEL = 1;
+	PARENT = 35;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|PDout[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 38;
+	TREE_LEVEL = 1;
+	PARENT = 35;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|PDout[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 39;
+	TREE_LEVEL = 1;
+	PARENT = 35;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|PDout[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 40;
+	TREE_LEVEL = 1;
+	PARENT = 35;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|PDout[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 41;
+	TREE_LEVEL = 1;
+	PARENT = 35;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|PDout[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 42;
+	TREE_LEVEL = 1;
+	PARENT = 35;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|PDout[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 43;
+	TREE_LEVEL = 1;
+	PARENT = 35;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|PDready";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 44;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|ParErr";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 45;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|counter";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 46;
+	TREE_LEVEL = 0;
+	CHILDREN = 47, 48, 49, 50;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|counter[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 47;
+	TREE_LEVEL = 1;
+	PARENT = 46;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|counter[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 48;
+	TREE_LEVEL = 1;
+	PARENT = 46;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|counter[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 49;
+	TREE_LEVEL = 1;
+	PARENT = 46;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "serialreceiver:Y|counter[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = ASCII;
+	TREE_INDEX = 50;
+	TREE_LEVEL = 1;
+	PARENT = 46;
+}
+
+TIME_BAR
+{
+	TIME = 16775;
+	MASTER = TRUE;
+}
+;

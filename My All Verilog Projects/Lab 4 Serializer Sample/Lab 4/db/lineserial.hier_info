@@ -1,0 +1,82 @@
+|lineserial
+Clk => Clk~0.IN1
+Send => Send~0.IN1
+PDin[0] => PDin[0]~7.IN1
+PDin[1] => PDin[1]~6.IN1
+PDin[2] => PDin[2]~5.IN1
+PDin[3] => PDin[3]~4.IN1
+PDin[4] => PDin[4]~3.IN1
+PDin[5] => PDin[5]~2.IN1
+PDin[6] => PDin[6]~1.IN1
+PDin[7] => PDin[7]~0.IN1
+SCout <= SCout~0.DB_MAX_OUTPUT_PORT_TYPE
+SDout <= SDout~0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[0] <= SerialReceiver:SR.PDout
+PDout[1] <= SerialReceiver:SR.PDout
+PDout[2] <= SerialReceiver:SR.PDout
+PDout[3] <= SerialReceiver:SR.PDout
+PDout[4] <= SerialReceiver:SR.PDout
+PDout[5] <= SerialReceiver:SR.PDout
+PDout[6] <= SerialReceiver:SR.PDout
+PDout[7] <= SerialReceiver:SR.PDout
+PDready <= SerialReceiver:SR.PDready
+
+
+|lineserial|SerialTransmitter:ST
+PDin[0] => SRreg~17.DATAB
+PDin[1] => SRreg~16.DATAB
+PDin[2] => SRreg~15.DATAB
+PDin[3] => SRreg~14.DATAB
+PDin[4] => SRreg~13.DATAB
+PDin[5] => SRreg~12.DATAB
+PDin[6] => SRreg~11.DATAB
+PDin[7] => SRreg~10.DATAB
+Clk => SRreg[8].CLK
+Clk => SRreg[7].CLK
+Clk => SRreg[6].CLK
+Clk => SRreg[5].CLK
+Clk => SRreg[4].CLK
+Clk => SRreg[3].CLK
+Clk => SRreg[2].CLK
+Clk => SRreg[1].CLK
+Clk => SRreg[0].CLK
+Clk => Cnt[4].CLK
+Clk => Cnt[3].CLK
+Clk => Cnt[2].CLK
+Clk => Cnt[1].CLK
+Clk => Cnt[0].CLK
+Clk => SRshift.CLK
+Clk => SCout.DATAIN
+Send => SRshift~1.OUTPUTSELECT
+Send => always0~0.IN0
+SCout <= Clk.DB_MAX_OUTPUT_PORT_TYPE
+SDout <= SRreg[8].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lineserial|SerialReceiver:SR
+SCin => Cntr[2].CLK
+SCin => Cntr[1].CLK
+SCin => Cntr[0].CLK
+SCin => SRshift_R.CLK
+SCin => PDout[7]~reg0.CLK
+SCin => PDout[6]~reg0.CLK
+SCin => PDout[5]~reg0.CLK
+SCin => PDout[4]~reg0.CLK
+SCin => PDout[3]~reg0.CLK
+SCin => PDout[2]~reg0.CLK
+SCin => PDout[1]~reg0.CLK
+SCin => PDout[0]~reg0.CLK
+SCin => SRshift_gg.CLK
+SDin => SRshift_R~0.OUTPUTSELECT
+SDin => PDout[0]~reg0.DATAIN
+PDout[0] <= PDout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[1] <= PDout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[2] <= PDout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[3] <= PDout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[4] <= PDout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[5] <= PDout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[6] <= PDout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[7] <= PDout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDready <= PDready~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

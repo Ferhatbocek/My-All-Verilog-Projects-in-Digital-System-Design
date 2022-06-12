@@ -1,0 +1,167 @@
+module toplevel(Clk,Send,PDin,PDout,PDready,ParErr);
+
+input Clk;
+input Send;
+input [7:0] PDin;
+
+output PDready;
+output [7:0] PDout;
+output ParErr; // Alýcýda hata durumunu gösterecek. Parity bitini kontrol edecek. 
+
+wire SDout;
+wire SCout;
+wire parity1;
+
+serialtransmitter X(Clk,Send,PDin,SCout,SDout);
+serialreceiver Y(SCout, SDout, PDout, PDready,ParErr);
+
+endmodule 
+
+//Gönderme giriþ(Send) darbesi bir saat döngüsünden daha uzun olduðunda çalýþacak þekilde deðiþtirin. 
+//Gönderme giriþi(Send), 1'e ayarlandýktan sonra yükselen Clk kenarýnda geçerlidir, ancak birkaç saat çevrimi için 1'de kalabilir.
+
+//SERIAL TRANSMITTER (Long Send Ýnput Pulse)
+
+//Seri verici ve PDin, CLK zamanlamasýndan baðýmsýz olarak bir saat döngüsü sýrasýnda herhangi bir zamanda çalýþacak þekilde deðiþtiriyoruz. 
+//Yani Send bir saat döngüsünden daha uzun süre boyunca PDini bekler ve PDin geldiði anda bu register'a yüklenmiþ olur. 
+
+//Seri data'ya bir eþlik(parity) biti ekliyoruz böylece transmitterdan receiver'a gelen datanýn doðruluðunu denetleyeceðiz.  
+//Ýletilen 8 bitlik data tek sayýda 1 biti içeriyorsa parity 1 aksi halde 0 olacak. 
+
+//Receiver'da hata durumunu gösteren bir ParErr çýkýþý olacak ve alýnan 8 bit datadan sonra eþlik bitini kontrol edecek. 
+//Alýnan veriden elde edilen eþlik biti ile ParErr eþleþirse  0'da kalacak. 
+//Eðer alýnan data, gönderilen data ile uyuþmuyorsa ParErr, PDready darbesi ile eþ zamanlý ve bir sonraki veri aktarýmýna kadar 1'de kalacaktýr. 
+
+module serialtransmitter(Clk,Send,PDin,SCout,SDout);
+input Clk;
+input Send;
+input [7:0] PDin; 
+
+output SCout; 
+output reg SDout;
+
+reg [9:0] SR; // 10 bitlik bir register gerekiyor toplamda. Start biti ve Parity biti dahil olduðu için. 
+assign SCout = Clk; 
+wire A; 
+wire Send2; 
+reg Send1;
+assign A = ^PDin[7:0]; // Paralel 8 bit datanýn tek ya da çift sayýda 1 içerdiðini tespit etmek için ex-ordan geçiriyorum.  if A=1 Tek / A=2 Çift
+
+
+always@(posedge Clk)
+begin
+	Send1 <= Send;
+end
+assign Send2 = Send & ~Send1; // 1 saykýl kadar gecikme oluþturuyorum böylecek start bitinin oluþturabileceði senkronizasyon sorununu kaldýrýyorum.
+
+always @(posedge Clk)
+begin
+	if (Send2 == 1'b1)  //Send2'nin 1 olmasý 10 bitlik datanýn iletimi için gerekli baþlangýcý saðlayacaktýr. Fakat öncelikle veri yüklenir. 
+	begin
+		if(SR[9:0] == 10'b0 ) // Send2 1 ise ve SR tamamen 0 ise SR[9] 1 olmalý bu benim start bitim olacak. 
+		begin
+			SR[9] <= 1'b1; //Start biti 1 olacak
+			SR[8:1] <= PDin[7:0]; // 8 bitlik paralel data SR registera yüklenecek. 
+			SR[0] <= A; // Parity biti SR[0]'a yüklenecek 
+			SDout <=1'b0; // Son olarak SDout'u 0 yükleyerek veri gönderimini tamamlýyorum. 
+		end
+		else  // Start biti yani Send2 0 ise start verilmiþ ve register kaydýrma iþlemine baþlamýþ demektir. 
+		begin
+			SDout <= SR[9];  // Most significant biti çýkýþa veriyorum. 
+			SR[9:1] <= SR[8:0]; // Shift register kaydýrma iþlemini gerçekleþtiriyor. 
+			SR[0] <= 1'b0; // Kaydýrma gerçekleþtirilirken register tamamen sýfýrlanýyor. 
+		end
+	end
+	else // Send2 hep 0 olsaydý ne olmasý gerekirdi burada bunu soruyorum. Send2'nin hep 0 olmasý herhangi bir data iletimi olmadýðý anlamýna gelir.
+	begin 
+		if(SR[9:0] == 10'b0 ) // Registerýn tüm bitleri sýfýrlanýr.  
+		begin
+			SDout <= 1'b0; // Seri data çýkýþý sürekli sýfýrdýr. 
+		end
+		else // Ve diðer durum yani Send2'nin 1 olmasý böylece data iletimi baþlamalý. 
+		begin
+			SDout <= SR[9]; 
+			SR[9:1] <= SR[8:0]; 
+			SR[0] <= 1'b0;
+		end
+	end
+end
+endmodule 
+
+//SERIAL RECEÝVER
+
+module serialreceiver(SCin, SDin, PDout, PDready,ParErr);
+input SCin;
+input SDin;
+
+output reg PDready;
+output reg [7:0] PDout;
+output reg ParErr;
+
+reg [3:0] counter = 4'b0; // 10 bitlik datanýn sayaç ile aktarýmýnýn gerçekleþtirilebilmesi için 4 bit sayaç yeterli 
+
+always@(posedge SCin)
+begin
+
+	PDout[0] <= SDin; // LSB to LSB - MSB to MSB þeklinde seri data giriþini paralel çýkýþa aktarýyorum. 
+	PDout[7:1] <= PDout[6:0];
+	
+	
+	if(SDin == 1'b1) // Datanýn Receiver'a ulaþtýðý anda bunu kontrol etmem gerekir. Buradan SDin'i kontrol ediyorum. Data geldi mi? 
+	begin
+		if(counter[3:0] == 4'b0000) // Sayacým tamamen sýfýr ise 
+		begin
+			PDout <= 1'b0; // paralel çýkýþ tamamen sýfýr
+			PDready <= 0; // PDready 8 bitlik datanýn tamamen paralel çýkýþa verildiði zaman 1 olacak. 
+			counter[3:0] <= counter[3:0] + 1'b1; // Counter saymaya baþlayacak. 
+		end
+		else if(counter[3:0] == 4'b1010) //  Sayacýn 10'a kadar saydýðý, start ve parity biti de dahil olmak üzere 10 biti aktardýðý anlamýna gelir.
+		begin
+			PDready <= 0; 
+			PDout[7:0] <= 8'b0;
+			counter[3:0] <= 4'b0000; // paralel çýkýþ ve sayaç sýfýrlanýr
+		end
+		else
+		begin
+			counter[3:0] <= counter[3:0] + 1'b1; 
+			PDready <= 0;
+			if(counter[3:0] == 4'b1001) // Sayacýn 9 a kadar saydýðý ve bir sonraki saat döngüsünde PDready 1'leyerek datanýn aktarýldýðýný gösterir
+			begin
+				PDready <= 1'b1; // 8 bitlik paralel data artýk hazýr. Tamamen çýkýþa aktarýldý. 
+				PDout[7:0] <= PDout[7:0]; // 1 saykýllýk saat döngüsünden sonra register paralel çýkýþlarýnda 8 bit datayý tutacak. 
+				ParErr <= SDin^(^PDout[7:0]); // Paralel datanýn her biti ile SDin ex-or'dan geçirilecek.
+			end                               // Böylece datanýn doðruluðunu test edeceðim.  
+		                                      // Datadan gelen parity ile ParErr eþleþmiyorsa eðer 1 eþleþiyorsa ParErr 0 kalacaktýr. 
+		end
+	end
+	
+	else
+	begin
+		if(counter[3:0] == 4'b0) // Sayaç sýfýr iken if else yapýsý gereði her karþýt durumu tanýmlamam gerekiyor. 
+		begin
+			PDout<=1'b0;
+			PDout[7:0] <= 0;
+			PDready <= 0;
+		end
+		else if(counter[3:0] == 4'b1010) // Sayaç 10 a kadar saydý 10 bit aktarýldý ve iþlem tamamlandý. 
+		begin
+			PDready <= 0;
+			counter[3:0] <= 4'b0000;
+			PDout[7:0] <= 8'b0;
+		end
+		else
+		begin
+			counter[3:0] <= counter[3:0] + 1'b1; 
+			PDready <= 0;
+			if(counter[3:0] == 4'b1001) //Sayacýn 9 a kadar saydýðý ve bir sonraki saat döngüsünde PDready 1'leyerek datanýn aktarýldýðýný gösterir
+			begin
+				PDready <= 1;
+				PDout[7:0] <= PDout[7:0];
+				ParErr <= SDin^(^PDout[7:0]); // Aktarýlan datanýn doðruluðunun testi için ParrErr ile datanýn parity bitini karþýlaþtýrýyorum.
+
+			end
+		end
+	end
+		
+end
+endmodule 

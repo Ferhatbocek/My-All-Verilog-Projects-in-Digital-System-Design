@@ -1,0 +1,95 @@
+|topmodule
+Clk => Clk~0.IN1
+Send => Send~0.IN1
+PDin[0] => PDin[0]~7.IN1
+PDin[1] => PDin[1]~6.IN1
+PDin[2] => PDin[2]~5.IN1
+PDin[3] => PDin[3]~4.IN1
+PDin[4] => PDin[4]~3.IN1
+PDin[5] => PDin[5]~2.IN1
+PDin[6] => PDin[6]~1.IN1
+PDin[7] => PDin[7]~0.IN1
+PDout[0] <= serialreceiver:Y.port2
+PDout[1] <= serialreceiver:Y.port2
+PDout[2] <= serialreceiver:Y.port2
+PDout[3] <= serialreceiver:Y.port2
+PDout[4] <= serialreceiver:Y.port2
+PDout[5] <= serialreceiver:Y.port2
+PDout[6] <= serialreceiver:Y.port2
+PDout[7] <= serialreceiver:Y.port2
+PDready <= serialreceiver:Y.port3
+
+
+|topmodule|serialtransmitter:X
+Clk => SR[8].CLK
+Clk => SR[7].CLK
+Clk => SR[6].CLK
+Clk => SR[5].CLK
+Clk => SR[4].CLK
+Clk => SR[3].CLK
+Clk => SR[2].CLK
+Clk => SR[1].CLK
+Clk => SR[0].CLK
+Clk => SDout~reg0.CLK
+Clk => SCout.DATAIN
+Send => SR~8.OUTPUTSELECT
+Send => SR~7.OUTPUTSELECT
+Send => SR~6.OUTPUTSELECT
+Send => SR~5.OUTPUTSELECT
+Send => SR~4.OUTPUTSELECT
+Send => SR~3.OUTPUTSELECT
+Send => SR~2.OUTPUTSELECT
+Send => SR~1.OUTPUTSELECT
+Send => SR~0.OUTPUTSELECT
+Send => SDout~reg0.ENA
+PDin[0] => SR~8.DATAB
+PDin[1] => SR~7.DATAB
+PDin[2] => SR~6.DATAB
+PDin[3] => SR~5.DATAB
+PDin[4] => SR~4.DATAB
+PDin[5] => SR~3.DATAB
+PDin[6] => SR~2.DATAB
+PDin[7] => SR~1.DATAB
+SCout <= Clk.DB_MAX_OUTPUT_PORT_TYPE
+SDout <= SDout~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|topmodule|serialreceiver:Y
+SCin => PDout[7]~reg0.CLK
+SCin => PDout[6]~reg0.CLK
+SCin => PDout[5]~reg0.CLK
+SCin => PDout[4]~reg0.CLK
+SCin => PDout[3]~reg0.CLK
+SCin => PDout[2]~reg0.CLK
+SCin => PDout[1]~reg0.CLK
+SCin => PDout[0]~reg0.CLK
+SCin => PDready~reg0.CLK
+SCin => counter[3].CLK
+SCin => counter[2].CLK
+SCin => counter[1].CLK
+SCin => counter[0].CLK
+SDin => PDout~31.OUTPUTSELECT
+SDin => PDout~30.OUTPUTSELECT
+SDin => PDout~29.OUTPUTSELECT
+SDin => PDout~28.OUTPUTSELECT
+SDin => PDout~27.OUTPUTSELECT
+SDin => PDout~26.OUTPUTSELECT
+SDin => PDout~25.OUTPUTSELECT
+SDin => PDout~24.OUTPUTSELECT
+SDin => counter~15.OUTPUTSELECT
+SDin => counter~14.OUTPUTSELECT
+SDin => counter~13.OUTPUTSELECT
+SDin => counter~12.OUTPUTSELECT
+SDin => PDout~15.DATAA
+SDin => PDout~7.DATAB
+PDout[0] <= PDout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[1] <= PDout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[2] <= PDout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[3] <= PDout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[4] <= PDout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[5] <= PDout[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[6] <= PDout[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDout[7] <= PDout[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PDready <= PDready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

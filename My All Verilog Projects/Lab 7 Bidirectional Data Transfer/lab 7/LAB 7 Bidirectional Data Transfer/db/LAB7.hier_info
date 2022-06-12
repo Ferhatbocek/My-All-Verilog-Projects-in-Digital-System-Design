@@ -1,0 +1,156 @@
+|LAB7
+Clock => Clock~0.IN4
+Sel1 => Sel1~0.IN1
+RnW1 => RnW1~0.IN1
+Sel2 => Sel2~0.IN1
+RnW2 => RnW2~0.IN1
+Sel3 => Sel3~0.IN1
+RnW3 => RnW3~0.IN1
+Sel4 => Sel4~0.IN1
+RnW4 => RnW4~0.IN1
+DioExt[0] <= DioExt[0]~0
+DioExt[1] <= DioExt[1]~1
+DioExt[2] <= DioExt[2]~2
+DioExt[3] <= DioExt[3]~3
+DioExt[4] <= DioExt[4]~4
+DioExt[5] <= DioExt[5]~5
+DioExt[6] <= DioExt[6]~6
+DioExt[7] <= DioExt[7]~7
+
+
+|LAB7|Reg8bit:R1
+Clk => Reg[7].CLK
+Clk => Reg[6].CLK
+Clk => Reg[5].CLK
+Clk => Reg[4].CLK
+Clk => Reg[3].CLK
+Clk => Reg[2].CLK
+Clk => Reg[1].CLK
+Clk => Reg[0].CLK
+Sel => Reg[0].ENA
+Sel => Reg[1].ENA
+Sel => Reg[2].ENA
+Sel => Reg[3].ENA
+Sel => Reg[4].ENA
+Sel => Reg[5].ENA
+Sel => Reg[6].ENA
+Sel => Reg[7].ENA
+RnW => Dio[7]~7.OE
+RnW => Dio[6]~6.OE
+RnW => Dio[5]~5.OE
+RnW => Dio[4]~4.OE
+RnW => Dio[3]~3.OE
+RnW => Dio[2]~2.OE
+RnW => Dio[1]~1.OE
+RnW => Dio[0]~0.OE
+Dio[0] <= Dio[0]~0
+Dio[1] <= Dio[1]~1
+Dio[2] <= Dio[2]~2
+Dio[3] <= Dio[3]~3
+Dio[4] <= Dio[4]~4
+Dio[5] <= Dio[5]~5
+Dio[6] <= Dio[6]~6
+Dio[7] <= Dio[7]~7
+
+
+|LAB7|Reg8bit:R2
+Clk => Reg[7].CLK
+Clk => Reg[6].CLK
+Clk => Reg[5].CLK
+Clk => Reg[4].CLK
+Clk => Reg[3].CLK
+Clk => Reg[2].CLK
+Clk => Reg[1].CLK
+Clk => Reg[0].CLK
+Sel => Reg[0].ENA
+Sel => Reg[1].ENA
+Sel => Reg[2].ENA
+Sel => Reg[3].ENA
+Sel => Reg[4].ENA
+Sel => Reg[5].ENA
+Sel => Reg[6].ENA
+Sel => Reg[7].ENA
+RnW => Dio[7]~7.OE
+RnW => Dio[6]~6.OE
+RnW => Dio[5]~5.OE
+RnW => Dio[4]~4.OE
+RnW => Dio[3]~3.OE
+RnW => Dio[2]~2.OE
+RnW => Dio[1]~1.OE
+RnW => Dio[0]~0.OE
+Dio[0] <= Dio[0]~0
+Dio[1] <= Dio[1]~1
+Dio[2] <= Dio[2]~2
+Dio[3] <= Dio[3]~3
+Dio[4] <= Dio[4]~4
+Dio[5] <= Dio[5]~5
+Dio[6] <= Dio[6]~6
+Dio[7] <= Dio[7]~7
+
+
+|LAB7|Reg8bit:R3
+Clk => Reg[7].CLK
+Clk => Reg[6].CLK
+Clk => Reg[5].CLK
+Clk => Reg[4].CLK
+Clk => Reg[3].CLK
+Clk => Reg[2].CLK
+Clk => Reg[1].CLK
+Clk => Reg[0].CLK
+Sel => Reg[0].ENA
+Sel => Reg[1].ENA
+Sel => Reg[2].ENA
+Sel => Reg[3].ENA
+Sel => Reg[4].ENA
+Sel => Reg[5].ENA
+Sel => Reg[6].ENA
+Sel => Reg[7].ENA
+RnW => Dio[7]~7.OE
+RnW => Dio[6]~6.OE
+RnW => Dio[5]~5.OE
+RnW => Dio[4]~4.OE
+RnW => Dio[3]~3.OE
+RnW => Dio[2]~2.OE
+RnW => Dio[1]~1.OE
+RnW => Dio[0]~0.OE
+Dio[0] <= Dio[0]~0
+Dio[1] <= Dio[1]~1
+Dio[2] <= Dio[2]~2
+Dio[3] <= Dio[3]~3
+Dio[4] <= Dio[4]~4
+Dio[5] <= Dio[5]~5
+Dio[6] <= Dio[6]~6
+Dio[7] <= Dio[7]~7
+
+
+|LAB7|Accumulator:Acc
+Clk => Reg[7].CLK
+Clk => Reg[6].CLK
+Clk => Reg[5].CLK
+Clk => Reg[4].CLK
+Clk => Reg[3].CLK
+Clk => Reg[2].CLK
+Clk => Reg[1].CLK
+Clk => Reg[0].CLK
+Sel => always0~1.IN1
+Sel => always0~0.IN1
+RnW => Dio[7]~7.OE
+RnW => Dio[6]~6.OE
+RnW => Dio[5]~5.OE
+RnW => Dio[4]~4.OE
+RnW => Dio[3]~3.OE
+RnW => Dio[2]~2.OE
+RnW => Dio[1]~1.OE
+RnW => Dio[0]~0.OE
+RnW => always0~0.IN0
+RnW => always0~1.IN0
+Dio[0] <= Dio[0]~0
+Dio[1] <= Dio[1]~1
+Dio[2] <= Dio[2]~2
+Dio[3] <= Dio[3]~3
+Dio[4] <= Dio[4]~4
+Dio[5] <= Dio[5]~5
+Dio[6] <= Dio[6]~6
+Dio[7] <= Dio[7]~7
+
+

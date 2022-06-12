@@ -1,0 +1,28 @@
+|toplevelmodule
+Clk => Clk~0.IN1
+nReset => nReset~0.IN1
+select => select~0.IN1
+fout <= andexfunc:Sl.port3
+
+
+|toplevelmodule|Counter3bit:Cl
+CountOut[0] <= CountOut[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CountOut[1] <= CountOut[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CountOut[2] <= CountOut[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Clk => CountOut[2]~reg0.CLK
+Clk => CountOut[1]~reg0.CLK
+Clk => CountOut[0]~reg0.CLK
+nReset => CountOut[2]~reg0.ACLR
+nReset => CountOut[1]~reg0.ACLR
+nReset => CountOut[0]~reg0.ACLR
+
+
+|toplevelmodule|andexfunc:Sl
+op1 => fout~1.IN0
+op1 => fout~0.IN0
+op2 => fout~1.IN1
+op2 => fout~0.IN1
+select => fout~2.OUTPUTSELECT
+fout <= fout~2.DB_MAX_OUTPUT_PORT_TYPE
+
+

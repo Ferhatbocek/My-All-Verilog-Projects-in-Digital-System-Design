@@ -1,0 +1,232 @@
+Simulator report for toplevel
+Tue May 17 09:39:07 2022
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 5.0 us       ;
+; Simulation Netlist Size     ; 56 nodes     ;
+; Simulation Coverage         ;      80.70 % ;
+; Total Number of Transitions ; 401          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone      ;
+; Device                      ; EP1C3T144C8  ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; VWF        ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On         ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      80.70 % ;
+; Total nodes checked                                 ; 56           ;
+; Total output ports checked                          ; 57           ;
+; Total output ports with complete 1/0-value coverage ; 46           ;
+; Total output ports with no 1/0-value coverage       ; 11           ;
+; Total output ports with no 1-value coverage         ; 11           ;
+; Total output ports with no 0-value coverage         ; 11           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                          ;
++----------------------------------------+------------------------------------------+------------------+
+; Node Name                              ; Output Port Name                         ; Output Port Type ;
++----------------------------------------+------------------------------------------+------------------+
+; |toplevel|serialreceiver:Y|PDout[0]    ; |toplevel|serialreceiver:Y|PDout[0]      ; regout           ;
+; |toplevel|serialreceiver:Y|PDout[1]    ; |toplevel|serialreceiver:Y|PDout[1]      ; regout           ;
+; |toplevel|serialreceiver:Y|PDout[2]    ; |toplevel|serialreceiver:Y|PDout[2]      ; regout           ;
+; |toplevel|serialreceiver:Y|PDout[3]    ; |toplevel|serialreceiver:Y|PDout[3]      ; regout           ;
+; |toplevel|serialreceiver:Y|PDout[4]    ; |toplevel|serialreceiver:Y|PDout[4]      ; regout           ;
+; |toplevel|serialreceiver:Y|PDout[5]    ; |toplevel|serialreceiver:Y|PDout[5]      ; regout           ;
+; |toplevel|serialreceiver:Y|PDout[6]    ; |toplevel|serialreceiver:Y|PDout[6]      ; regout           ;
+; |toplevel|serialreceiver:Y|PDout[7]    ; |toplevel|serialreceiver:Y|PDout[7]      ; regout           ;
+; |toplevel|serialreceiver:Y|PDready     ; |toplevel|serialreceiver:Y|PDready       ; regout           ;
+; |toplevel|serialreceiver:Y|counter[1]  ; |toplevel|serialreceiver:Y|counter[1]    ; regout           ;
+; |toplevel|serialreceiver:Y|counter[3]  ; |toplevel|serialreceiver:Y|counter[3]    ; regout           ;
+; |toplevel|serialreceiver:Y|counter[0]  ; |toplevel|serialreceiver:Y|counter[0]    ; regout           ;
+; |toplevel|serialreceiver:Y|counter[2]  ; |toplevel|serialreceiver:Y|counter[2]    ; regout           ;
+; |toplevel|serialreceiver:Y|PDout[0]~24 ; |toplevel|serialreceiver:Y|PDout[0]~24   ; combout          ;
+; |toplevel|serialreceiver:Y|PDout[0]~26 ; |toplevel|serialreceiver:Y|PDout[0]~26   ; combout          ;
+; |toplevel|serialreceiver:Y|ParErr~3    ; |toplevel|serialreceiver:Y|ParErr~3      ; combout          ;
+; |toplevel|serialreceiver:Y|ParErr~4    ; |toplevel|serialreceiver:Y|ParErr~4      ; combout          ;
+; |toplevel|serialreceiver:Y|ParErr~5    ; |toplevel|serialreceiver:Y|ParErr~5      ; combout          ;
+; |toplevel|serialtransmitter:X|SR[9]    ; |toplevel|serialtransmitter:X|SR[9]      ; regout           ;
+; |toplevel|serialtransmitter:X|SDout    ; |toplevel|serialreceiver:Y|counter[0]~18 ; combout          ;
+; |toplevel|serialtransmitter:X|SDout    ; |toplevel|serialtransmitter:X|SDout      ; regout           ;
+; |toplevel|serialtransmitter:X|SR[8]    ; |toplevel|serialtransmitter:X|SR[8]      ; regout           ;
+; |toplevel|serialtransmitter:X|SR[0]    ; |toplevel|serialtransmitter:X|SR[0]      ; regout           ;
+; |toplevel|serialtransmitter:X|SR[1]    ; |toplevel|serialtransmitter:X|SR[1]      ; regout           ;
+; |toplevel|serialtransmitter:X|Equal0~0 ; |toplevel|serialtransmitter:X|Equal0~0   ; combout          ;
+; |toplevel|serialtransmitter:X|SR[2]    ; |toplevel|serialtransmitter:X|SR[2]      ; regout           ;
+; |toplevel|serialtransmitter:X|SR[3]    ; |toplevel|serialtransmitter:X|SR[3]      ; regout           ;
+; |toplevel|serialtransmitter:X|SR[4]    ; |toplevel|serialtransmitter:X|SR[4]      ; regout           ;
+; |toplevel|serialtransmitter:X|SR[5]    ; |toplevel|serialtransmitter:X|SR[5]      ; regout           ;
+; |toplevel|serialtransmitter:X|Equal0~1 ; |toplevel|serialtransmitter:X|Equal0~1   ; combout          ;
+; |toplevel|serialtransmitter:X|SR[6]    ; |toplevel|serialtransmitter:X|SR[6]      ; regout           ;
+; |toplevel|serialtransmitter:X|SR[7]    ; |toplevel|serialtransmitter:X|SR[7]      ; regout           ;
+; |toplevel|serialtransmitter:X|Equal0~2 ; |toplevel|serialtransmitter:X|Equal0~2   ; combout          ;
+; |toplevel|serialtransmitter:X|Send1    ; |toplevel|serialtransmitter:X|SR[1]~32   ; combout          ;
+; |toplevel|serialtransmitter:X|Send1    ; |toplevel|serialtransmitter:X|Send1      ; regout           ;
+; |toplevel|PDout[0]                     ; |toplevel|PDout[0]                       ; padio            ;
+; |toplevel|PDout[1]                     ; |toplevel|PDout[1]                       ; padio            ;
+; |toplevel|PDout[2]                     ; |toplevel|PDout[2]                       ; padio            ;
+; |toplevel|PDout[3]                     ; |toplevel|PDout[3]                       ; padio            ;
+; |toplevel|PDout[4]                     ; |toplevel|PDout[4]                       ; padio            ;
+; |toplevel|PDout[5]                     ; |toplevel|PDout[5]                       ; padio            ;
+; |toplevel|PDout[6]                     ; |toplevel|PDout[6]                       ; padio            ;
+; |toplevel|PDout[7]                     ; |toplevel|PDout[7]                       ; padio            ;
+; |toplevel|PDready                      ; |toplevel|PDready                        ; padio            ;
+; |toplevel|Clk                          ; |toplevel|Clk~corein                     ; combout          ;
+; |toplevel|Send                         ; |toplevel|Send~corein                    ; combout          ;
++----------------------------------------+------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                               ;
++------------------------------------------+------------------------------------------+------------------+
+; Node Name                                ; Output Port Name                         ; Output Port Type ;
++------------------------------------------+------------------------------------------+------------------+
+; |toplevel|serialtransmitter:X|WideXor0~0 ; |toplevel|serialtransmitter:X|WideXor0~0 ; combout          ;
+; |toplevel|serialtransmitter:X|WideXor0~1 ; |toplevel|serialtransmitter:X|WideXor0~1 ; combout          ;
+; |toplevel|ParErr                         ; |toplevel|ParErr                         ; padio            ;
+; |toplevel|PDin[7]                        ; |toplevel|PDin[7]~corein                 ; combout          ;
+; |toplevel|PDin[4]                        ; |toplevel|PDin[4]~corein                 ; combout          ;
+; |toplevel|PDin[6]                        ; |toplevel|PDin[6]~corein                 ; combout          ;
+; |toplevel|PDin[0]                        ; |toplevel|PDin[0]~corein                 ; combout          ;
+; |toplevel|PDin[2]                        ; |toplevel|PDin[2]~corein                 ; combout          ;
+; |toplevel|PDin[3]                        ; |toplevel|PDin[3]~corein                 ; combout          ;
+; |toplevel|PDin[1]                        ; |toplevel|PDin[1]~corein                 ; combout          ;
+; |toplevel|PDin[5]                        ; |toplevel|PDin[5]~corein                 ; combout          ;
++------------------------------------------+------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                               ;
++------------------------------------------+------------------------------------------+------------------+
+; Node Name                                ; Output Port Name                         ; Output Port Type ;
++------------------------------------------+------------------------------------------+------------------+
+; |toplevel|serialtransmitter:X|WideXor0~0 ; |toplevel|serialtransmitter:X|WideXor0~0 ; combout          ;
+; |toplevel|serialtransmitter:X|WideXor0~1 ; |toplevel|serialtransmitter:X|WideXor0~1 ; combout          ;
+; |toplevel|ParErr                         ; |toplevel|ParErr                         ; padio            ;
+; |toplevel|PDin[7]                        ; |toplevel|PDin[7]~corein                 ; combout          ;
+; |toplevel|PDin[4]                        ; |toplevel|PDin[4]~corein                 ; combout          ;
+; |toplevel|PDin[6]                        ; |toplevel|PDin[6]~corein                 ; combout          ;
+; |toplevel|PDin[0]                        ; |toplevel|PDin[0]~corein                 ; combout          ;
+; |toplevel|PDin[2]                        ; |toplevel|PDin[2]~corein                 ; combout          ;
+; |toplevel|PDin[3]                        ; |toplevel|PDin[3]~corein                 ; combout          ;
+; |toplevel|PDin[1]                        ; |toplevel|PDin[1]~corein                 ; combout          ;
+; |toplevel|PDin[5]                        ; |toplevel|PDin[5]~corein                 ; combout          ;
++------------------------------------------+------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 132 02/25/2009 SJ Web Edition
+    Info: Processing started: Tue May 17 09:39:06 2022
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off toplevel -c toplevel
+Info: Using vector source file "C:/Users/ferhat/Desktop/toplevel/toplevel.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of toplevel.vwf called toplevel.sim_ori.vwf has been created in the db folder
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      80.70 %
+Info: Number of transitions in simulation is 401
+Info: Vector file toplevel.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 157 megabytes
+    Info: Processing ended: Tue May 17 09:39:08 2022
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+

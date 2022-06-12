@@ -1,0 +1,28 @@
+|lab3
+Clk => Clk~0.IN2
+SwOut => SwOut~0.IN2
+SwOutDB1 <= debouncer1:db1.port2
+SwOutDB2 <= debouncer2:db2.port2
+
+
+|lab3|debouncer1:db1
+SwOut => flip[0].DATAIN
+Clk1ms => flip[3].CLK
+Clk1ms => flip[2].CLK
+Clk1ms => flip[1].CLK
+Clk1ms => flip[0].CLK
+Clk1ms => SwOutDB1~reg0.CLK
+SwOutDB1 <= SwOutDB1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab3|debouncer2:db2
+SwOut => flip[0].DATAIN
+SwOut => always1~1.IN1
+SwOut => always1~0.IN0
+Clk1ms => flip[2].CLK
+Clk1ms => flip[1].CLK
+Clk1ms => flip[0].CLK
+Clk1ms => SwOutDB2~reg0.CLK
+SwOutDB2 <= SwOutDB2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
